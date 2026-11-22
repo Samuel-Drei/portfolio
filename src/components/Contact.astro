@@ -1,5 +1,5 @@
 ---
-import { wa, EMAIL, PHONE_LABEL, PHONE_TEL, LINKEDIN, GITHUB, INSTAGRAM } from '../data/site';
+import { wa, MSG, EMAIL, PHONE_LABEL, PHONE_TEL, LINKEDIN, GITHUB, INSTAGRAM } from '../data/site';
 ---
 <section id="contato" class="contact">
   <span class="mono contact__label" data-reveal>(07) · Orçamento</span>
@@ -7,12 +7,12 @@ import { wa, EMAIL, PHONE_LABEL, PHONE_TEL, LINKEDIN, GITHUB, INSTAGRAM } from '
     <span class="hero__line"><span>Vamos</span></span>
     <span class="hero__line"><span class="outline">conversar?</span></span>
   </h2>
-  <p class="contact__lead" data-reveal>Conte em uma mensagem o que seu negócio faz e onde atua. Respondo com uma proposta clara.</p>
+  <p class="contact__lead" data-reveal>Conte em uma mensagem o que seu negócio faz e onde atua. Eu respondo com uma proposta clara, por escrito.</p>
 
   <div class="contact__actions" data-reveal>
-    <a class="btn btn--wa btn--lg" href={wa('Olá Samuel! Vi seu portfólio e quero um orçamento de site / SEO / Google Meu Negócio.')} target="_blank" rel="noopener noreferrer">Chamar no WhatsApp&nbsp;↗</a>
-    <a class="btn btn--ghost btn--lg" href={`mailto:${EMAIL}`}>{EMAIL}</a>
+    <a class="btn btn--wa btn--lg" href={wa(MSG.final)} target="_blank" rel="noopener noreferrer">Receber minha proposta no WhatsApp&nbsp;↗</a>
   </div>
+  <p class="hero__micro mono" data-reveal>Sem compromisso. Abre o WhatsApp com a mensagem já escrita. Prefere e-mail? <a href={`mailto:${EMAIL}`}>{EMAIL}</a></p>
 
   <footer class="footer">
     <div class="footer__cols">
@@ -29,18 +29,18 @@ import { wa, EMAIL, PHONE_LABEL, PHONE_TEL, LINKEDIN, GITHUB, INSTAGRAM } from '
       </div>
       <div>
         <h3 class="mono">Índice</h3>
+        <a href="#google-meu-negocio">Resultados no Google</a>
+        <a href="#sites">Sites no ar</a>
         <a href="#servicos">Serviços</a>
-        <a href="#resultados">Resultados</a>
-        <a href="#sobre">Sobre</a>
       </div>
     </div>
     <div class="footer__base mono">
-      <span>© 2026 Samuel Andrei Tramontin Teixeira</span>
+      <span>© 2026 Samuel Andrei Tramontin Teixeira · Primavera do Leste, MT</span>
       <a href="#inicio">Voltar ao topo&nbsp;↑</a>
     </div>
   </footer>
 </section>
 
-<a class="wa-float" href={wa('Olá Samuel! Vi seu portfólio e quero um orçamento.')} target="_blank" rel="noopener noreferrer" aria-label="Chamar no WhatsApp">
-  <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.4Z"/></svg>
-</a>
+<div class="cta-bar" id="ctaBar">
+  <a class="btn btn--wa" href={wa(MSG.bar)} target="_blank" rel="noopener noreferrer">Pedir orçamento no WhatsApp</a>
+</div>

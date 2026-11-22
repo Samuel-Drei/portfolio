@@ -1,36 +1,24 @@
+// Textos em linguagem simples (sem jargão): o leitor é o dono do negócio, não outro desenvolvedor.
 export const SERVICES = [
-  { idx: '01', title: 'Site profissional', text: 'Site rápido e responsivo, feito em Next.js e Astro, com a estrutura certa para o Google entender e o visitante chamar no WhatsApp.', tags: 'Next.js · Astro · TypeScript · Mobile first' },
-  { idx: '02', title: 'SEO técnico', text: 'Velocidade, páginas por serviço e cidade, dados estruturados e indexação. O básico bem feito que faz o site ser encontrado.', tags: 'Core Web Vitals · Schema · Search Console' },
-  { idx: '03', title: 'Google Meu Negócio', text: 'Perfil completo e verificado, categorias certas, fotos, serviços e nome, endereço e telefone iguais ao site, para aparecer no Maps.', tags: 'Maps · Avaliações · SEO local' },
-  { idx: '04', title: 'Link da bio do Instagram', text: 'Uma página leve, feita para o celular, que transforma o clique do perfil em conversa no WhatsApp, no lugar de uma lista genérica de links.', tags: 'Landing page · WhatsApp · Conversão' },
-];
-
-export const STATS = [
-  { num: '15', sup: '+', label: 'sites criados para clientes de vários setores' },
-  { num: '2', sup: 'k', label: 'usuários/mês nos apps HelpMe e Realiza' },
-  { num: '16→3', sup: '', label: 'portas expostas após o hardening do servidor' },
-  { num: '−67', sup: '%', label: 'tempo de resposta de um sistema de IA (15,8s → 5,2s)' },
-];
-
-export const WORK = [
-  { title: 'Sites para clientes', cat: '+15 sites com SEO técnico, para negócios ranquearem no Google', meta: 'Next.js · TypeScript · React' },
-  { title: 'HelpMe e Realiza', cat: 'Apps mobile em produção, com API própria, login e pagamentos', meta: 'React Native · Asaas' },
-  { title: 'Infra segura', cat: 'Servidor com firewall, fail2ban e chave SSH. Falha de WhatsApp corrigida na causa raiz', meta: 'Linux · Cloudflare · Docker' },
-  { title: 'RAG Pipeline v2.0', cat: 'Consulta inteligente de documentos com IA, 67% mais rápida e 67% mais barata', meta: 'Python · LangChain · Vector DB' },
-  { title: 'ConectAgro', cat: 'App que conecta produtores rurais a corretores e equipes de safra em Mato Grosso', meta: 'TypeScript · React · Capacitor' },
+  { idx: '01', title: 'Site profissional', text: 'Site rápido, que abre bem no celular, com botão de WhatsApp para o cliente chamar em um toque.', tags: 'Feito para celular · WhatsApp' },
+  { idx: '02', title: 'Ser encontrado no Google', text: 'Organizo seu site para o Google entender o que você faz e onde atende, para aparecer quando buscam seu serviço na sua cidade.', tags: 'Aparecer nas buscas · Painel de visitas' },
+  { idx: '03', title: 'Google Meu Negócio', text: 'A ficha da sua empresa no Google, completa e verificada: categorias, fotos, serviços, telefone e endereço iguais aos do site. É ela que aparece no mapa.', tags: 'Google Maps · Avaliações' },
+  { idx: '04', title: 'Página para o Instagram', text: 'Uma página leve, feita para o celular, que fica no link do seu perfil e leva o cliente direto para o WhatsApp.', tags: 'Link do Instagram · WhatsApp' },
 ];
 
 export const STEPS = [
-  { title: 'Conversa', text: 'Entendo seu negócio, sua cidade, seus concorrentes e o que você quer receber: ligações, orçamentos ou pedidos.' },
-  { title: 'Estrutura', text: 'Defino páginas, palavras-chave e textos pensando em como seu cliente pesquisa no Google.' },
-  { title: 'Desenvolvimento', text: 'Construo o site, configuro o Google Meu Negócio e o Search Console. Você acompanha tudo antes de publicar.' },
-  { title: 'Publicação e ajustes', text: 'Site no ar, indexado e medido. Depois acompanho os números e ajusto o que for preciso.' },
+  { title: 'Conversa inicial', text: 'Você me conta o que seu negócio faz, onde atua e o que quer receber: ligações, orçamentos ou pedidos.' },
+  { title: 'Plano', text: 'Defino as páginas e os textos pensando no que seu cliente digita no Google para te encontrar.' },
+  { title: 'Construção', text: 'Faço o site e arrumo a ficha da sua empresa no Google. Você vê tudo pronto antes de ir ao ar.' },
+  { title: 'No ar e acompanhamento', text: 'Site publicado e aparecendo nas buscas. Depois acompanho os números e ajusto o que for preciso.' },
 ];
 
-// Usado na seção de dúvidas e no JSON-LD (FAQPage)
 export const FAQ = [
-  { q: 'Quanto tempo leva para ficar pronto um site?', a: 'Um site institucional costuma ficar pronto em 1 a 3 semanas, dependendo do conteúdo e da quantidade de páginas. O prazo exato é combinado antes de começar.' },
-  { q: 'Em quanto tempo aparece no Google?', a: 'O Google leva de dias a semanas para indexar um site novo. Ranquear bem em buscas competitivas é um processo de meses e depende do mercado e da concorrência. Ninguém pode prometer a primeira posição, e eu não prometo.' },
-  { q: 'Preciso ter Google Meu Negócio?', a: 'Se você atende clientes de uma cidade ou região, sim. O Perfil da Empresa é o que aparece no Maps e nas buscas locais, e funciona junto com o site.' },
-  { q: 'Você faz a página do link da bio do Instagram?', a: 'Sim. É uma página leve, pensada para celular, com botão de WhatsApp, serviços e prova social.' },
+  { q: 'Quanto custa um site?', a: 'Depende do que você precisa: quantidade de páginas, se já tem ficha no Google, se quer página para o Instagram. Na primeira conversa eu passo o valor e envio a proposta por escrito antes de começar.' },
+  { q: 'Quanto tempo leva para ficar pronto?', a: 'Um site institucional costuma ficar pronto em 1 a 3 semanas, dependendo do conteúdo e da quantidade de páginas. O prazo exato é combinado antes de começar.' },
+  { q: 'Em quanto tempo aparece no Google?', a: 'O Google leva de dias a semanas para mostrar um site novo. Aparecer bem em buscas disputadas é um processo de meses e depende do mercado e da concorrência. Ninguém pode prometer a primeira posição, e eu não prometo.' },
+  { q: 'Preciso ter Google Meu Negócio?', a: 'Se você atende clientes de uma cidade ou região, sim. É a ficha da sua empresa que aparece no mapa e nas buscas da cidade, e funciona junto com o site.' },
+  { q: 'O que preciso enviar para começar?', a: 'Basta me contar o que seu negócio faz e onde atua. Fotos, logo e textos podem vir depois, e eu ajudo a organizar.' },
+  { q: 'Funciona no celular?', a: 'Sim, os sites são feitos primeiro para o celular. Nos perfis de exemplo acima, 69% (Chaveiro Estrela) e 62% (Construtora São Bento) das visualizações vieram de buscas pelo celular.' },
+  { q: 'Você faz a página para o link do Instagram?', a: 'Sim. É uma página leve, pensada para o celular, com botão de WhatsApp, serviços e opiniões de clientes.' },
 ];

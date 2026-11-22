@@ -10,20 +10,28 @@ export const INSTAGRAM = '';
 
 export const wa = (msg: string) => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
 
+// Mensagens pré-preenchidas (uma por seção, para saber de onde veio o contato)
+export const MSG = {
+  hero: 'Olá Samuel! Vi seu site e quero um orçamento. Meu negócio é: ___ . Minha cidade é: ___ .',
+  gmn: 'Olá Samuel! Vi os resultados no Google e quero algo parecido para o meu negócio. Meu negócio é: ___ .',
+  sites: 'Olá Samuel! Vi os sites que você fez e quero um para o meu negócio. Meu negócio é: ___ .',
+  final: 'Olá Samuel! Quero receber uma proposta de site e Google para o meu negócio. Meu negócio é: ___ . Minha cidade é: ___ .',
+  bar: 'Olá Samuel! Vi seu site e quero um orçamento. Meu negócio é: ___ .',
+};
+
 export const NAV = [
+  { href: '#google-meu-negocio', label: 'Google' },
+  { href: '#sites', label: 'Sites' },
   { href: '#servicos', label: 'Serviços' },
-  { href: '#resultados', label: 'Resultados' },
-  { href: '#maps', label: 'Maps' },
-  { href: '#processo', label: 'Processo' },
-  { href: '#sobre', label: 'Sobre' },
+  { href: '#faq', label: 'Dúvidas' },
 ];
 
 export const MENU = [
+  { href: '#google-meu-negocio', label: 'Resultados no Google' },
+  { href: '#sites', label: 'Sites no ar' },
   { href: '#servicos', label: 'Serviços' },
-  { href: '#resultados', label: 'Resultados' },
-  { href: '#maps', label: 'Google Meu Negócio' },
-  { href: '#processo', label: 'Processo' },
-  { href: '#sobre', label: 'Sobre' },
+  { href: '#processo', label: 'Como funciona' },
   { href: '#faq', label: 'Dúvidas' },
+  { href: '#sobre', label: 'Sobre' },
   { href: '#contato', label: 'Orçamento' },
 ];
