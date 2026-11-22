@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+# TODO: adicionar a linha "Sitemap: https://SEU-DOMINIO/sitemap.xml" quando o domínio estiver definido

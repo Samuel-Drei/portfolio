@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Samuel Andrei · Sites, SEO e Google Meu Negócio para empresas</title>
+  <meta name="description" content="Criação de sites rápidos, SEO técnico e otimização do Google Meu Negócio para fazer sua empresa aparecer no Google e receber clientes no WhatsApp. Mais de 15 sites entregues." />
+  <meta name="author" content="Samuel Andrei Tramontin Teixeira" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0b0b0a" />
+  <!-- TODO: quando o domínio estiver definido, adicionar <link rel="canonical"> e og:url / og:image absolutos -->
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:title" content="Samuel Andrei · Sites, SEO e Google Meu Negócio" />
+  <meta property="og:description" content="Sites rápidos que aparecem no Google e trazem clientes no WhatsApp." />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230b0b0a'/%3E%3Ctext x='16' y='23' font-family='Arial' font-weight='800' font-size='20' text-anchor='middle' fill='%23ff5227'%3ES%3C/text%3E%3C/svg%3E" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "#samuel",
+        "name": "Samuel Andrei Tramontin Teixeira",
+        "jobTitle": "Desenvolvedor Full-Stack e especialista em SEO técnico",
+        "email": "mailto:samuelandreit.teixeira@gmail.com",
+        "telephone": "+55-66-98424-5364",
+        "address": { "@type": "PostalAddress", "addressRegion": "MT", "addressCountry": "BR" },
+        "sameAs": ["https://www.linkedin.com/in/samuel-andrei", "https://github.com/Samuel-Drei"]
+      },
+      {
+        "@type": "ProfessionalService",
+        "name": "Samuel Andrei · Sites e SEO",
+        "founder": { "@id": "#samuel" },
+        "telephone": "+55-66-98424-5364",
+        "areaServed": "BR",
+        "serviceType": ["Criação de sites", "SEO técnico", "Otimização de Google Meu Negócio", "Página para link da bio do Instagram"]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "Quanto tempo leva para ficar pronto um site?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Um site institucional costuma ficar pronto em 1 a 3 semanas, dependendo do conteúdo e da quantidade de páginas. O prazo exato é combinado antes de começar." } },
+          { "@type": "Question", "name": "Em quanto tempo aparece no Google?",
+            "acceptedAnswer": { "@type": "Answer", "text": "O Google leva de dias a semanas para indexar um site novo. Ranquear bem para buscas competitivas é um processo de meses e depende do mercado e da concorrência. Ninguém pode prometer a primeira posição." } },
+          { "@type": "Question", "name": "Preciso ter Google Meu Negócio?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Se você atende clientes de uma cidade ou região, sim. O Perfil da Empresa no Google é o que aparece no Maps e nas buscas locais, e funciona junto com o site." } },
+          { "@type": "Question", "name": "Você faz a página do link da bio do Instagram?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Sim. É uma página leve, pensada para celular, com botão de WhatsApp, serviços e prova social, no lugar de um agregador genérico de links." } }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
+  <canvas class="field" id="field" aria-hidden="true"></canvas>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <span class="preloader__name">Samuel Andrei</span>
+    <span class="preloader__count mono" id="preloaderCount">00</span>
+  </div>
+
+  <header class="head" id="head">
+    <a class="head__brand" href="#inicio">Samuel&nbsp;Andrei<sup>©</sup></a>
+    <nav class="head__nav" aria-label="Principal">
+      <a href="#servicos">Serviços</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#maps">Maps</a>
+      <a href="#processo">Processo</a>
+      <a href="#sobre">Sobre</a>
+      <a class="head__cta" href="#contato">Orçamento</a>
+    </nav>
+    <button class="menu-btn mono" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+  </header>
+
+  <div class="menu" id="menu" aria-hidden="true">
+    <nav aria-label="Menu">
+      <a href="#servicos"><span class="mono">01</span>Serviços</a>
+      <a href="#resultados"><span class="mono">02</span>Resultados</a>
+      <a href="#maps"><span class="mono">03</span>Google Meu Negócio</a>
+      <a href="#processo"><span class="mono">04</span>Processo</a>
+      <a href="#sobre"><span class="mono">05</span>Sobre</a>
+      <a href="#faq"><span class="mono">06</span>Dúvidas</a>
+      <a href="#contato"><span class="mono">07</span>Orçamento</a>
+    </nav>
+  </div>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section id="inicio" class="hero">
+      <div class="hero__top mono">
+        <span>Portfólio · 2026</span>
+        <span class="hero__top-mid">Sites · SEO · Google Meu Negócio</span>
+        <span>Mato Grosso, BR</span>
+      </div>
+
+      <h1 class="hero__title">
+        <span class="hero__kicker">Samuel Andrei · desenvolvedor full-stack</span>
+        <span class="hero__line"><span>Seu negócio</span></span>
+        <span class="hero__line"><span>no <em>topo</em> do Google.</span></span>
+      </h1>
+
+      <div class="hero__foot">
+        <p class="hero__lead">
+          Crio <strong>sites rápidos</strong>, faço o <strong>SEO técnico</strong> e deixo seu
+          <strong>Google Meu Negócio</strong> pronto para aparecer no Maps, para o cliente chamar
+          direto no <strong>WhatsApp</strong>.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--wa" id="waHero" href="#contato" data-wa="Olá Samuel! Vi seu portfólio e quero um orçamento.">Chamar no WhatsApp&nbsp;↗</a>
+          <a class="btn btn--ghost" href="#resultados">Ver resultados</a>
+        </div>
+        <ul class="hero__proof mono">
+          <li><b>15+</b> sites entregues</li>
+          <li><b>~2 mil</b> usuários/mês em apps</li>
+          <li><b>Next.js</b> + SEO técnico</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Sites que vendem&ensp;✦&ensp;SEO técnico&ensp;✦&ensp;Google Meu Negócio&ensp;✦&ensp;Link da bio do Instagram&ensp;✦&ensp;WhatsApp&ensp;✦&ensp;Velocidade&ensp;✦&ensp;</span>
+        <span>Sites que vendem&ensp;✦&ensp;SEO técnico&ensp;✦&ensp;Google Meu Negócio&ensp;✦&ensp;Link da bio do Instagram&ensp;✦&ensp;WhatsApp&ensp;✦&ensp;Velocidade&ensp;✦&ensp;</span>
+      </div>
+    </div>
+
+    <!-- SERVIÇOS -->
+    <section id="servicos" class="sec">
+      <header class="sec__head">
+        <span class="mono" data-reveal>(01) · Serviços</span>
+        <h2 data-reveal>O que eu <em>faço</em> pelo seu negócio</h2>
+      </header>
+
+      <ul class="services">
+        <li class="service" data-reveal>
+          <span class="service__idx mono">01</span>
+          <h3>Site profissional</h3>
+          <p>Site rápido e responsivo, feito em Next.js, com a estrutura certa para o Google entender e o visitante chamar no WhatsApp.</p>
+          <span class="service__tags mono">Next.js · TypeScript · Mobile first</span>
+        </li>
+        <li class="service" data-reveal>
+          <span class="service__idx mono">02</span>
+          <h3>SEO técnico</h3>
+          <p>Velocidade, páginas por serviço e cidade, dados estruturados e indexação. O básico bem feito que faz o site ser encontrado.</p>
+          <span class="service__tags mono">Core Web Vitals · Schema · Search Console</span>
+        </li>
+        <li class="service" data-reveal>
+          <span class="service__idx mono">03</span>
+          <h3>Google Meu Negócio</h3>
+          <p>Perfil completo e verificado, categorias certas, fotos, serviços e nome, endereço e telefone iguais ao site, para aparecer no Maps.</p>
+          <span class="service__tags mono">Maps · Avaliações · SEO local</span>
+        </li>
+        <li class="service" data-reveal>
+          <span class="service__idx mono">04</span>
+          <h3>Link da bio do Instagram</h3>
+          <p>Uma página leve, feita para o celular, que transforma o clique do perfil em conversa no WhatsApp, no lugar de uma lista genérica de links.</p>
+          <span class="service__tags mono">Landing page · WhatsApp · Conversão</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- RESULTADOS -->
+    <section id="resultados" class="sec sec--alt">
+      <header class="sec__head">
+        <span class="mono" data-reveal>(02) · Resultados</span>
+        <h2 data-reveal>Entrega <em>real</em>, em produção</h2>
+      </header>
+
+      <ul class="stats" data-reveal>
+        <li><span class="stat__num">15<sup>+</sup></span><span class="mono">sites criados para clientes de vários setores</span></li>
+        <li><span class="stat__num">2<sup>k</sup></span><span class="mono">usuários/mês nos apps HelpMe e Realiza</span></li>
+        <li><span class="stat__num">16→3</span><span class="mono">portas expostas após o hardening do servidor</span></li>
+        <li><span class="stat__num">−67<sup>%</sup></span><span class="mono">tempo de resposta de um sistema de IA (15,8s → 5,2s)</span></li>
+      </ul>
+
+      <ul class="work-list" id="workList">
+        <li>
+          <div class="work-row">
+            <span class="work-row__idx mono">01</span>
+            <span class="work-row__title">Sites para clientes</span>
+            <span class="work-row__cat">+15 sites com SEO técnico, para negócios ranquearem no Google</span>
+            <span class="work-row__meta mono">Next.js · TypeScript · React</span>
+          </div>
+        </li>
+        <li>
+          <div class="work-row">
+            <span class="work-row__idx mono">02</span>
+            <span class="work-row__title">HelpMe e Realiza</span>
+            <span class="work-row__cat">Apps mobile em produção, com API própria, login e pagamentos</span>
+            <span class="work-row__meta mono">React Native · Asaas</span>
+          </div>
+        </li>
+        <li>
+          <div class="work-row">
+            <span class="work-row__idx mono">03</span>
+            <span class="work-row__title">Infra segura</span>
+            <span class="work-row__cat">Servidor com firewall, fail2ban e chave SSH. Falha de WhatsApp corrigida na causa raiz</span>
+            <span class="work-row__meta mono">Linux · Cloudflare · Docker</span>
+          </div>
+        </li>
+        <li>
+          <div class="work-row">
+            <span class="work-row__idx mono">04</span>
+            <span class="work-row__title">RAG Pipeline v2.0</span>
+            <span class="work-row__cat">Consulta inteligente de documentos com IA, 67% mais rápida e 67% mais barata</span>
+            <span class="work-row__meta mono">Python · LangChain · Vector DB</span>
+          </div>
+        </li>
+        <li>
+          <div class="work-row">
+            <span class="work-row__idx mono">05</span>
+            <span class="work-row__title">ConectAgro</span>
+            <span class="work-row__cat">App que conecta produtores rurais a corretores e equipes de safra em Mato Grosso</span>
+            <span class="work-row__meta mono">TypeScript · React · Capacitor</span>
+          </div>
+        </li>
+      </ul>
+
+      <!-- Sites entregues: preenchido por main.js a partir da lista SITES (oculto se vazia) -->
+      <div class="sites" id="sites" hidden>
+        <h3 class="mono">Sites no ar</h3>
+        <ul class="sites__grid" id="sitesGrid"></ul>
+      </div>
+    </section>
+
+    <!-- GOOGLE MEU NEGÓCIO -->
+    <section id="maps" class="sec">
+      <header class="sec__head">
+        <span class="mono" data-reveal>(03) · Google Meu Negócio</span>
+        <h2 data-reveal>Perfis que <em>aparecem</em> no Google e no Maps</h2>
+      </header>
+
+      <ul class="gmn">
+        <li class="gmn-card gmn-card--feature" data-reveal>
+          <h3>Hotel Tezla</h3>
+          <p class="mono">Hotelaria · Primavera do Leste (MT)</p>
+          <span class="gmn-card__period mono">jun–nov/2026</span>
+          <div class="gmn-card__nums gmn-card__nums--3">
+            <div><span class="gmn-card__n">12.201</span><span class="mono">pessoas viram o perfil</span><span class="gmn-card__up">+9,4% <small>vs. set/2025</small></span></div>
+            <div><span class="gmn-card__n">5.767</span><span class="mono">buscas mostraram o perfil</span><span class="gmn-card__up">+5,4% <small>vs. set/2025</small></span></div>
+            <div><span class="gmn-card__n">4.225</span><span class="mono">interações com o perfil <small>(jun–nov/2026)</small></span></div>
+          </div>
+          <p class="gmn-card__q">Buscas principais: <b>“hotéis”</b> (1.684), <b>“hotel em primavera do leste”</b> (905) e <b>“hotel primavera do leste”</b> (608) · 46% das visualizações vêm pelo Google Maps no celular</p>
+        </li>
+        <li class="gmn-card" data-reveal>
+          <h3>Chaveiro Estrela</h3>
+          <p class="mono">Chaveiro · Primavera do Leste (MT)</p>
+          <span class="gmn-card__period mono">Últimos 12 meses</span>
+          <div class="gmn-card__nums">
+            <div><span class="gmn-card__n">3.664</span><span class="mono">pessoas viram o perfil</span></div>
+            <div><span class="gmn-card__n">1.736</span><span class="mono">buscas mostraram o perfil</span></div>
+          </div>
+          <p class="gmn-card__q">Buscas principais: <b>“chaveiro primavera do leste”</b> (785) e <b>“chaveiro”</b> (393) · 69% pelo celular · 4,6★ em 66 avaliações<br />Último mês: 692 visualizações <span class="gmn-card__up">+17,3%</span> e 388 buscas <span class="gmn-card__up">+1,8%</span> <small>(vs. set/2025)</small></p>
+        </li>
+        <li class="gmn-card" data-reveal>
+          <h3>Tron Locações</h3>
+          <p class="mono">Geradores e içamento pesado</p>
+          <span class="gmn-card__period mono">Últimos 12 meses</span>
+          <div class="gmn-card__nums">
+            <div><span class="gmn-card__n">1.099</span><span class="mono">pessoas viram o perfil</span></div>
+            <div><span class="gmn-card__n">58</span><span class="mono">buscas mostraram o perfil</span></div>
+          </div>
+          <p class="gmn-card__q">Buscas principais: <b>“tenda”</b> (33) e <b>“gerador de energia”</b> (25) · 52% pelo celular<br />Último mês: 245 visualizações <span class="gmn-card__up">+14,0%</span> e 41 buscas <span class="gmn-card__up">+57,7%</span> <small>(vs. out/2025)</small></p>
+        </li>
+        <li class="gmn-card" data-reveal>
+          <h3>Construtora São Bento</h3>
+          <p class="mono">Locação de máquinas e terraplanagem · Primavera do Leste (MT)</p>
+          <span class="gmn-card__period mono">Último mês</span>
+          <div class="gmn-card__nums">
+            <div><span class="gmn-card__n">331</span><span class="mono">pessoas viram o perfil</span></div>
+            <div><span class="gmn-card__n">39</span><span class="mono">buscas mostraram o perfil</span></div>
+          </div>
+          <p class="gmn-card__q">Busca nº 1: <b>“construtora primavera do leste”</b> (21) · 62% pelo celular</p>
+        </li>
+        <li class="gmn-card" data-reveal>
+          <h3>iBrand Marketing</h3>
+          <p class="mono">Agência de marketing · Primavera do Leste (MT)</p>
+          <span class="gmn-card__period mono">Últimos 12 meses</span>
+          <div class="gmn-card__nums">
+            <div><span class="gmn-card__n">761</span><span class="mono">pessoas viram o perfil</span></div>
+            <div><span class="gmn-card__n">129</span><span class="mono">buscas mostraram o perfil</span></div>
+          </div>
+          <p class="gmn-card__q">Aparece em buscas genéricas: <b>“marketing”</b> (81) e <b>“marketing digital”</b> (48)</p>
+        </li>
+        <li class="gmn-card" data-reveal>
+          <h3>MR Resgate</h3>
+          <p class="mono">Remoção e transporte médico · Primavera do Leste (MT)</p>
+          <span class="gmn-card__period mono">Último mês</span>
+          <div class="gmn-card__nums">
+            <div><span class="gmn-card__n">621</span><span class="mono">pessoas viram o perfil</span></div>
+            <div><span class="gmn-card__n">47</span><span class="mono">buscas mostraram o perfil</span></div>
+          </div>
+          <p class="gmn-card__q">Busca nº 1: <b>“ambulância”</b> (47) · 56% pelo celular</p>
+        </li>
+        <li class="gmn-card" data-reveal>
+          <h3>Plenus</h3>
+          <p class="mono">Infraestrutura de TI e controle de ponto</p>
+          <span class="gmn-card__period mono">Último mês</span>
+          <div class="gmn-card__nums">
+            <div><span class="gmn-card__n">794</span><span class="mono">pessoas viram o perfil</span></div>
+            <div><span class="gmn-card__n">65%</span><span class="mono">pesquisa no Google (computador e celular)</span></div>
+          </div>
+          <p class="gmn-card__q">Encontrado por <b>“desenvolvimento de sistemas”</b> e pelo nome da empresa · 21% pelo Google Maps no celular</p>
+        </li>
+      </ul>
+      <p class="gmn__note mono" data-reveal>Dados do painel “Desempenho” do Perfil da Empresa no Google, publicados com autorização dos clientes. O período está indicado em cada cartão. Variações comparadas ao período mostrado no próprio painel.</p>
+    </section>
+
+    <!-- PROCESSO -->
+    <section id="processo" class="sec sec--alt">
+      <header class="sec__head">
+        <span class="mono" data-reveal>(04) · Processo</span>
+        <h2 data-reveal>Do <em>briefing</em> ao site no ar</h2>
+      </header>
+      <ol class="steps">
+        <li data-reveal><span class="mono">01</span><h3>Conversa</h3><p>Entendo seu negócio, sua cidade, seus concorrentes e o que você quer receber: ligações, orçamentos ou pedidos.</p></li>
+        <li data-reveal><span class="mono">02</span><h3>Estrutura</h3><p>Defino páginas, palavras-chave e textos pensando em como seu cliente pesquisa no Google.</p></li>
+        <li data-reveal><span class="mono">03</span><h3>Desenvolvimento</h3><p>Construo o site, configuro o Google Meu Negócio e o Search Console. Você acompanha tudo antes de publicar.</p></li>
+        <li data-reveal><span class="mono">04</span><h3>Publicação e ajustes</h3><p>Site no ar, indexado e medido. Depois acompanho os números e ajusto o que for preciso.</p></li>
+      </ol>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="sec sec--alt">
+      <header class="sec__head">
+        <span class="mono" data-reveal>(05) · Sobre</span>
+        <h2 data-reveal>Quem vai <em>cuidar</em> do seu projeto</h2>
+      </header>
+
+      <div class="about">
+        <div class="about__body">
+          <p class="about__lede" data-reveal>
+            Sou o Samuel, desenvolvedor full-stack. Trabalho na <strong>iBrand Marketing</strong> (Grupo GT Tecnology),
+            onde criei mais de 15 sites com foco em aparecer no Google e hoje mantenho apps e sistemas em produção.
+          </p>
+          <p class="about__text" data-reveal>
+            Entendo tanto a parte que o cliente vê, o site bonito e claro, quanto a parte que decide o resultado:
+            velocidade, segurança, SEO e integrações. Estudo Engenharia de Software na UTFPR e faço tudo com código
+            próprio, sem depender de templates pesados.
+          </p>
+          <dl class="about__facts" data-reveal>
+            <div><dt class="mono">Formação</dt><dd>Engenharia de Software · UTFPR (2026–atual)</dd></div>
+            <div><dt class="mono">Experiência</dt><dd>iBrand Marketing · desde dez/2025</dd></div>
+            <div><dt class="mono">Certificação</dt><dd>CS50x · Harvard (edX)</dd></div>
+            <div><dt class="mono">Idiomas</dt><dd>Português · Inglês B2–C1</dd></div>
+          </dl>
+          <p data-reveal>
+            <a class="btn btn--ghost" href="assets/curriculo-samuel-andrei.pdf" download>Baixar currículo (PDF)&nbsp;↓</a>
+          </p>
+        </div>
+
+        <div class="about__stack" data-reveal>
+          <div><h3 class="mono">Desenvolvimento</h3><p>TypeScript · JavaScript · Python · React · Next.js · APIs REST · Git/GitHub</p></div>
+          <div><h3 class="mono">IA e dados</h3><p>RAG · Embeddings · Bancos vetoriais · Prompt engineering</p></div>
+          <div><h3 class="mono">Infra e segurança</h3><p>PostgreSQL · Cloudflare · VPS Linux · Docker · SSH · Firewall</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="sec">
+      <header class="sec__head">
+        <span class="mono" data-reveal>(06) · Dúvidas</span>
+        <h2 data-reveal>Perguntas <em>frequentes</em></h2>
+      </header>
+      <div class="faq" data-reveal>
+        <details>
+          <summary>Quanto tempo leva para ficar pronto um site?</summary>
+          <p>Um site institucional costuma ficar pronto em 1 a 3 semanas, dependendo do conteúdo e da quantidade de páginas. O prazo exato é combinado antes de começar.</p>
+        </details>
+        <details>
+          <summary>Em quanto tempo aparece no Google?</summary>
+          <p>O Google leva de dias a semanas para indexar um site novo. Ranquear bem em buscas competitivas é um processo de meses e depende do mercado e da concorrência. Ninguém pode prometer a primeira posição, e eu não prometo.</p>
+        </details>
+        <details>
+          <summary>Preciso ter Google Meu Negócio?</summary>
+          <p>Se você atende clientes de uma cidade ou região, sim. O Perfil da Empresa é o que aparece no Maps e nas buscas locais, e funciona junto com o site.</p>
+        </details>
+        <details>
+          <summary>Você faz a página do link da bio do Instagram?</summary>
+          <p>Sim. É uma página leve, pensada para celular, com botão de WhatsApp, serviços e prova social.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="contact">
+      <span class="mono contact__label" data-reveal>(07) · Orçamento</span>
+      <h2 class="contact__title" data-reveal>
+        <span class="hero__line"><span>Vamos</span></span>
+        <span class="hero__line"><span class="outline">conversar?</span></span>
+      </h2>
+      <p class="contact__lead" data-reveal>Conte em uma mensagem o que seu negócio faz e onde atua. Respondo com uma proposta clara.</p>
+
+      <div class="contact__actions" data-reveal>
+        <a class="btn btn--wa btn--lg" data-wa="Olá Samuel! Vi seu portfólio e quero um orçamento de site / SEO / Google Meu Negócio." href="#">Chamar no WhatsApp&nbsp;↗</a>
+        <a class="btn btn--ghost btn--lg" href="mailto:samuelandreit.teixeira@gmail.com">samuelandreit.teixeira@gmail.com</a>
+      </div>
+
+      <footer class="footer">
+        <div class="footer__cols">
+          <div>
+            <h3 class="mono">Contato</h3>
+            <a href="tel:+5566984245364">(66) 98424-5364</a>
+            <a href="mailto:samuelandreit.teixeira@gmail.com">E-mail</a>
+          </div>
+          <div>
+            <h3 class="mono">Redes</h3>
+            <a href="https://www.linkedin.com/in/samuel-andrei" target="_blank" rel="noopener noreferrer">LinkedIn&nbsp;↗</a>
+            <a href="https://github.com/Samuel-Drei" target="_blank" rel="noopener noreferrer">GitHub&nbsp;↗</a>
+          </div>
+          <div>
+            <h3 class="mono">Índice</h3>
+            <a href="#servicos">Serviços</a>
+            <a href="#resultados">Resultados</a>
+            <a href="#sobre">Sobre</a>
+          </div>
+        </div>
+        <div class="footer__base mono">
+          <span>© 2026 Samuel Andrei Tramontin Teixeira</span>
+          <a href="#inicio">Voltar ao topo&nbsp;↑</a>
+        </div>
+      </footer>
+    </section>
+  </main>
+
+  <!-- Botão flutuante de WhatsApp (mobile) -->
+  <a class="wa-float" data-wa="Olá Samuel! Vi seu portfólio e quero um orçamento." href="#" aria-label="Chamar no WhatsApp">
+    <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.4Z"/></svg>
+  </a>
+
+  <script src="main.js"></script>
+</body>
+</html>
