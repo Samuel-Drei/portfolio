@@ -1,15 +1,13 @@
 ﻿/* Samuel Andrei · Portfólio
-   Layout, cores e tipografia seguem o modelo do Grupo Tech: Menseal (títulos) + Chillax (texto),
+   Layout, cores e tipografia seguem o modelo do Grupo Tech: Syne (títulos) + Chillax (texto),
    fundo #111214, dourado #d29d33 e ferrugem #8f330a, seções claras alternando com escuras. */
 
-@font-face { font-family: 'Menseal'; font-weight: 400; font-display: swap; src: url(/fonts/menseal-regular.woff2) format('woff2'); }
-@font-face { font-family: 'Menseal'; font-weight: 500; font-display: swap; src: url(/fonts/menseal-medium.woff2) format('woff2'); }
-@font-face { font-family: 'Menseal'; font-weight: 700; font-display: swap; src: url(/fonts/menseal-bold.woff2) format('woff2'); }
-@font-face { font-family: 'Menseal'; font-weight: 800; font-display: swap; src: url(/fonts/menseal-extrabold.woff2) format('woff2'); }
+@font-face { font-family: 'Syne'; font-weight: 700; font-display: swap; src: url(/fonts/syne-700-latin.woff2) format('woff2'); }
+@font-face { font-family: 'Syne'; font-weight: 800; font-display: swap; src: url(/fonts/syne-800-latin.woff2) format('woff2'); }
 @font-face { font-family: 'Chillax'; font-weight: 200 700; font-display: swap; src: url(/fonts/chillax-variable.woff2) format('woff2'); }
 
 :root {
-  --font-display: 'Menseal', Helvetica, Arial, sans-serif;
+  --font-display: 'Syne', Helvetica, Arial, sans-serif;
   --font-body: 'Chillax', Helvetica, Arial, sans-serif;
 
   --bg: #111214;
