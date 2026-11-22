@@ -68,3 +68,10 @@ const contact = $('#contato');
 if (ctaBar && contact) {
   new IntersectionObserver(([e]) => ctaBar.classList.toggle('is-off', e.isIntersecting)).observe(contact);
 }
+
+// Vídeo do topo: só toca se a pessoa aceita movimento e não está em economia de dados
+const heroVideo = $<HTMLVideoElement>('#heroVideo');
+if (heroVideo && (reduce || saver)) {
+  heroVideo.removeAttribute('autoplay');
+  heroVideo.pause();
+}
