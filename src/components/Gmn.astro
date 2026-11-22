@@ -1,59 +1,103 @@
 ---
 import { GMN } from '../data/gmn';
+import GoogleG from './GoogleG.astro';
 
-// Os três perfis com mais volume viram cartões grandes; os demais entram em lista compacta.
+// Os três perfis com mais volume viram cartões grandes; os demais entram em cartões menores.
 const TOP = ['Hotel Tezla', 'Chaveiro Estrela', 'Tron Locações'];
 const top = GMN.filter((g) => TOP.includes(g.name));
 const rest = GMN.filter((g) => !TOP.includes(g.name));
 ---
-<section id="google-meu-negocio" class="sec sec--light">
+<section id="google-meu-negocio" class="sec sec--light gsec">
   <header class="sec__head">
-    <p class="eyebrow eyebrow--gold" data-reveal>Resultados no Google</p>
-    <h2 data-blur>Empresas da sua cidade que aparecem no Google e no mapa</h2>
+    <p class="gtag" data-reveal><GoogleG size={22} /> Resultados no Google</p>
+    <h2 data-blur>Como essas empresas aparecem no Google</h2>
     <p class="sec__intro" data-reveal>
-      Cada cartão é o painel real do Google de um cliente: quantas pessoas viram a ficha da empresa
-      e o que digitaram para chegar nela.
+      Números reais do painel do Google de cada cliente: quantas pessoas viram a empresa
+      e o que digitaram para encontrá-la.
     </p>
   </header>
 
   <ul class="gmn">
     {top.map((g) => (
-      <li class:list={['gmn-card', { 'gmn-card--feature': g.feature }]} data-reveal>
-        <h3>{g.name}</h3>
-        <p class="gmn-card__seg">{g.segment}</p>
-        <span class="gmn-card__period">{g.period}</span>
-        <div class="gmn-card__nums">
-          {g.stats.map((s) => (
-            <div>
-              <span class="gmn-card__n">{s.n}</span>
-              <span class="gmn-card__lbl">{s.label}</span>
-              {s.up && <span class="gmn-card__up">{s.up} {s.vs && <small>{s.vs}</small>}</span>}
-            </div>
-          ))}
+      <li class:list={['gcard', { 'gcard--wide': g.feature }]} data-reveal>
+        <div class="gcard__top">
+          <GoogleG size={28} />
+          <div class="gcard__id">
+            <h3>{g.name}</h3>
+            <p>{g.segment}</p>
+          </div>
+          <span class="gcard__period">{g.period}</span>
         </div>
-        <p class="gmn-card__q" set:html={g.q} />
+
+        <div class="gcard__main">
+          <div class="gcard__big">
+            <span class="gcard__n">{g.stats[0].n}</span>
+            <span class="gcard__lbl">{g.stats[0].label}</span>
+            {g.stats[0].up && <span class="gup">▲ {g.stats[0].up} {g.stats[0].vs && <small>{g.stats[0].vs}</small>}</span>}
+          </div>
+          <ul class="gcard__more">
+            {g.stats.slice(1).map((s) => (
+              <li>
+                <b>{s.n}</b>
+                <span>{s.label}</span>
+                {s.up && <span class="gup">▲ {s.up} {s.vs && <small>{s.vs}</small>}</span>}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="gcard__s">
+          <p class="gcard__h">O que as pessoas digitaram no Google</p>
+          <ul class="gsearch">
+            {g.searches?.map((s) => (
+              <li>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                <span>{s.t}</span>
+                {s.n && <em>{s.n}x</em>}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {g.recent && (
+          <p class="gcard__recent">
+            <b>{g.recent.title}:</b>
+            {g.recent.items.map((i) => (<span>{i.n} {i.what} <span class="gup">▲ {i.up}</span></span>))}
+            <small>{g.recent.vs}</small>
+          </p>
+        )}
+        {g.notes && (
+          <ul class="gcard__notes">
+            {g.notes.map((n) => <li>{n}</li>)}
+          </ul>
+        )}
       </li>
     ))}
   </ul>
 
-  <h3 class="gmn-more" data-reveal>Outros perfis</h3>
-  <ul class="gmn-mini" data-reveal>
+  <h3 class="gmore" data-reveal>Outros perfis</h3>
+  <ul class="gmini">
     {rest.map((g) => (
-      <li>
-        <strong>{g.name}</strong>
-        <span>{g.segment}</span>
-        <span>{g.stats[0].n} {g.stats[0].label} · {g.period}</span>
+      <li class="gmini__card" data-reveal>
+        <div class="gmini__top">
+          <GoogleG size={20} />
+          <span class="gmini__period">{g.period}</span>
+        </div>
+        <span class="gmini__n">{g.stats[0].n}</span>
+        <span class="gmini__lbl">{g.stats[0].label}</span>
+        <h4>{g.name}</h4>
+        <p>{g.segment}</p>
       </li>
     ))}
   </ul>
 
-  <div class="trust" data-reveal>
+  <div class="gtrust" data-reveal>
     <h3>Como ler estes números</h3>
     <ul>
       <li>Os dados vêm do painel “Desempenho” do Perfil da Empresa no Google de cada cliente, publicados com autorização deles.</li>
-      <li>O período aparece em cada cartão. Eles diferem porque os perfis foram medidos em momentos diferentes.</li>
-      <li>“Viram o perfil” significa que alguém viu a ficha da empresa. Não é, por si só, um cliente fechado. Ligações, pedidos de rota e cliques no site ainda não estão nesta página.</li>
-      <li>Não prometo posição no Google. O que eu faço é deixar a empresa pronta para ser encontrada.</li>
+      <li>O período aparece em cada cartão, porque os perfis foram medidos em momentos diferentes.</li>
+      <li>“Viram a empresa” quer dizer que alguém viu a ficha dela no Google. Não é, por si só, um cliente fechado. Ligações e pedidos de rota ainda não estão aqui.</li>
+      <li>Não prometo posição no Google. Eu deixo a empresa pronta para ser encontrada.</li>
     </ul>
   </div>
 </section>
