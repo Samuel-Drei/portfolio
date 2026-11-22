@@ -1,0 +1,52 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import { SITES } from '../data/sites';
+import { wa, MSG } from '../data/site';
+---
+<Base
+  title="Todos os projetos · Samuel Andrei"
+  description="Todos os sites criados por Samuel Andrei, com os resultados reais dos perfis dessas empresas no Google."
+>
+  <Header />
+  <main id="main" class="pall" data-light-sec>
+    <header class="pall__head">
+      <p class="pall__eyebrow">Portfólio completo</p>
+      <h1 data-blur>Todos os projetos</h1>
+      <a class="wbtn" href="/#projetos"><span>Voltar ao início</span><i aria-hidden="true">←</i></a>
+    </header>
+    <ul class="pall__grid">
+      {SITES.map((s) => (
+        <li class="pcard" data-reveal>
+          <a class="wcard__media" href={s.url} target="_blank" rel="noopener noreferrer" aria-label={`Abrir o site ${s.name}`}>
+            <video
+              muted loop playsinline preload="none"
+              poster={`/videos/${s.video}.jpg`}
+              data-src={`/videos/${s.video}.mp4`}
+              aria-hidden="true"
+            ></video>
+          </a>
+          <div class="wcard__body">
+            <h3>{s.name}</h3>
+            <div class="wcard__row">
+              <div class="wcard__txt">
+                <p>{s.note}</p>
+                {s.result && (
+                  <p class="wcard__res"><b>{s.result.n}</b> {s.result.text} <small>· {s.result.period}</small></p>
+                )}
+              </div>
+              <div class="wcard__links">
+                <a class="wbtn" href={s.url} target="_blank" rel="noopener noreferrer" aria-label={`Visitar o site ${s.name}`}><span>Visitar site</span><i aria-hidden="true">→</i></a>
+                {s.demo && <a class="wbtn wbtn--sm" href={s.demo} target="_blank" rel="noopener noreferrer"><span>Testar demo</span><i aria-hidden="true">→</i></a>}
+              </div>
+            </div>
+          </div>
+        </li>
+      ))}
+    </ul>
+    <div class="pall__end">
+      <h2 data-blur>Quer um site assim para o seu negócio?</h2>
+      <a class="wbtn" href={wa(MSG.final)} target="_blank" rel="noopener noreferrer"><span>Falar no WhatsApp</span><i aria-hidden="true">→</i></a>
+    </div>
+  </main>
+</Base>

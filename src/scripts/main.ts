@@ -3,6 +3,45 @@ const $ = <T extends Element = HTMLElement>(s: string, r: ParentNode = document)
 const $$ = <T extends Element = HTMLElement>(s: string, r: ParentNode = document) => [...r.querySelectorAll<T>(s)];
 const body = document.body;
 
+// Letras do título entrando com desfoque, uma de cada vez
+const blurEls = $$('[data-blur]');
+if (!reduce) {
+  blurEls.forEach((el) => {
+    el.setAttribute('aria-label', (el.textContent ?? '').replace(/\s+/g, ' ').trim());
+    let i = 0;
+    const walk = (node: Node) => {
+      [...node.childNodes].forEach((n) => {
+        if (n.nodeType === 3) {
+          const frag = document.createDocumentFragment();
+          (n.textContent ?? '').split(/(\s+)/).forEach((part) => {
+            if (!part) return;
+            if (/^\s+$/.test(part)) { frag.append(document.createTextNode(' ')); return; }
+            const w = document.createElement('span');
+            w.className = 'bword';
+            w.setAttribute('aria-hidden', 'true');
+            [...part].forEach((ch) => {
+              const s = document.createElement('span');
+              s.className = 'bchar';
+              s.textContent = ch;
+              s.style.setProperty('--i', String(i++));
+              w.append(s);
+            });
+            frag.append(w);
+          });
+          n.replaceWith(frag);
+        } else if (n.nodeType === 1 && (n as Element).tagName !== 'BR') {
+          walk(n);
+        }
+      });
+    };
+    walk(el);
+  });
+}
+const bio = new IntersectionObserver((es) => es.forEach((e) => {
+  if (e.isIntersecting) { e.target.classList.add('is-in'); bio.unobserve(e.target); }
+}), { threshold: 0.4 });
+blurEls.filter((el) => el.dataset.blur !== 'manual').forEach((el) => bio.observe(el));
+
 // Aparecer ao rolar
 const io = new IntersectionObserver((es) => es.forEach((e) => {
   if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
@@ -33,12 +72,13 @@ videos.forEach((v) => { pio.observe(v); vio.observe(v); });
 // Cabeçalho (fundo ao rolar, uma leitura por quadro)
 const nav = $('#nav');
 let ticking = false;
-const lightSecs = $$('#projetos, #google-meu-negocio');
+const lightSecs = $$('#projetos, #google-meu-negocio, [data-light-sec]');
+const workSec = $('#projetos');
 const paint = () => {
   ticking = false;
   nav?.classList.toggle('is-stuck', scrollY > 30);
   if (nav) {
-    nav.classList.toggle('on-work', !!lightSecs[0] && (() => { const r = lightSecs[0].getBoundingClientRect(); return r.top <= 40 && r.bottom > 40; })());
+    nav.classList.toggle('on-work', !!workSec && (() => { const r = workSec.getBoundingClientRect(); return r.top <= 40 && r.bottom > 40; })());
     nav.classList.toggle('on-light', lightSecs.some((s) => { const r = s.getBoundingClientRect(); return r.top <= 40 && r.bottom > 40; }));
   }
 };
@@ -85,16 +125,17 @@ if (work && track) {
   const panels = $$('.wpanel', track);
   const endPlus = $<SVGElement>('.wend__plus');
   const endLine = $('.wend__line');
+  const underBig = $('.work__big');
   let over = 0;
   const size = () => {
     if (!desktop.matches) { work.style.height = ''; track.style.transform = ''; return; }
-    over = Math.max(0, track.scrollWidth - innerWidth);
+    over = Math.max(0, track.scrollWidth); // o último painel sai inteiro para a esquerda
     work.style.height = `${innerHeight + over}px`;
   };
   let tk = false;
   const frame = () => {
     tk = false;
-    if (!desktop.matches) { panels.forEach((c) => c.classList.add('is-in')); return; }
+    if (!desktop.matches) { panels.forEach((c) => c.classList.add('is-in')); underBig?.classList.add('is-in'); return; }
     const r = work.getBoundingClientRect();
     const p = Math.min(1, Math.max(0, over > 0 ? -r.top / over : 0));
     const x = p * over;
@@ -116,6 +157,7 @@ if (work && track) {
       endLine.style.transform = `scaleY(${n})`;
       endPlus.style.opacity = n <= 0.01 || edge < 0 ? '0' : '1';
       endPlus.style.transform = `rotate(${360 * n}deg)`;
+      if (edge < vw * 0.55) underBig?.classList.add('is-in');
     }
   };
   const queue = () => { if (!tk) { tk = true; requestAnimationFrame(frame); } };

@@ -4,7 +4,7 @@ import { MENU, wa, MSG, PHONE_LABEL, PHONE_TEL, EMAIL } from '../data/site';
 <a class="skip-link" href="#main">Pular para o conteúdo</a>
 
 <header class="nav" id="nav">
-  <a class="nav__brand" href="#inicio">Samuel Andrei<span>.</span></a>
+  <a class="nav__brand" href="/">Samuel Andrei<span>.</span></a>
   <div class="nav__right">
     <a class="nav__talk" href={wa(MSG.bar)} target="_blank" rel="noopener noreferrer">Fale comigo</a>
     <button class="nav__menu" id="menuBtn" type="button" aria-expanded="false" aria-controls="menuPanel">
@@ -18,7 +18,7 @@ import { MENU, wa, MSG, PHONE_LABEL, PHONE_TEL, EMAIL } from '../data/site';
 <div class="menu-panel" id="menuPanel" aria-hidden="true" role="dialog" aria-label="Menu">
   <nav aria-label="Menu">
     {MENU.map((l, i) => (
-      <a href={l.href}><small>{String(i + 1).padStart(2, '0')}</small>{l.label}</a>
+      <a href={l.href.startsWith('#') ? `/${l.href}` : l.href}><small>{String(i + 1).padStart(2, '0')}</small>{l.label}</a>
     ))}
   </nav>
   <div class="menu-panel__foot">

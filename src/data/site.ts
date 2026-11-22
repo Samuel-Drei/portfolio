@@ -28,6 +28,7 @@ export const NAV = [
 
 export const MENU = [
   { href: '#projetos', label: 'Projetos' },
+  { href: '/projetos', label: 'Todos os projetos' },
   { href: '#google-meu-negocio', label: 'Resultados no Google' },
   { href: '#contato', label: 'Contato' },
 ];
