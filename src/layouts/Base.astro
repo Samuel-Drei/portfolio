@@ -2,18 +2,31 @@
 import '../styles/global.css';
 import { PHONE_TEL, LINKEDIN, GITHUB } from '../data/site';
 
-interface Props { title: string; description: string }
-const { title, description } = Astro.props;
+interface Props { title: string; description: string; crumb?: string }
+const { title, description, crumb } = Astro.props;
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
+const ogImage = Astro.site ? new URL('/og.jpg', Astro.site).href : undefined;
 
 // FAQPage removido: o Google não mostra mais resultado destacado de FAQ para este tipo de site.
 // O FAQ continua na página como texto, que é o que ajuda o visitante e a busca.
+const home = Astro.site ? new URL('/', Astro.site).href : '/';
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
     {
+      '@type': 'WebSite',
+      '@id': `${home}#website`,
+      url: home,
+      name: 'Samuel Andrei',
+      inLanguage: 'pt-BR',
+      publisher: { '@id': `${home}#samuel` },
+    },
+    {
       '@type': 'Person',
-      '@id': '#samuel',
+      '@id': `${home}#samuel`,
+      url: home,
+      image: ogImage,
+      description: 'Desenvolvedor que cria sites e cuida do Google Meu Negócio de empresas. Mais de 25 sites em produção.',
       name: 'Samuel Andrei Tramontin Teixeira',
       jobTitle: 'Desenvolvedor de sites e especialista em Google Meu Negócio',
       telephone: PHONE_TEL,
@@ -22,12 +35,23 @@ const jsonLd = {
     },
     {
       '@type': 'ProfessionalService',
-      '@id': '#service',
+      '@id': `${home}#service`,
+      url: home,
+      image: ogImage,
       name: 'Samuel Andrei · Sites e Google Meu Negócio',
-      founder: { '@id': '#samuel' },
+      founder: { '@id': `${home}#samuel` },
       telephone: PHONE_TEL,
       serviceType: ['Criação de sites', 'SEO local', 'Otimização de Google Meu Negócio', 'Página para link do Instagram'],
     },
+    ...(crumb && canonical
+      ? [{
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Início', item: home },
+            { '@type': 'ListItem', position: 2, name: crumb, item: canonical },
+          ],
+        }]
+      : []),
   ],
 };
 ---
@@ -48,7 +72,11 @@ const jsonLd = {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     {canonical && <meta property="og:url" content={canonical} />}
-    <meta name="twitter:card" content="summary" />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    {ogImage && <meta property="og:image:width" content="1200" />}
+    {ogImage && <meta property="og:image:height" content="630" />}
+    {ogImage && <meta name="twitter:image" content={ogImage} />}
+    <meta name="twitter:card" content={ogImage ? 'summary_large_image' : 'summary'} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <!-- TODO: criar public/og.jpg (1200x630) e adicionar og:image + twitter:image (trocar card para summary_large_image) -->

@@ -1,8 +1,9 @@
 import { defineConfig } from 'astro/config';
 
-// TODO: quando o domínio estiver definido, adicionar  site: 'https://SEU-DOMINIO'
-// (habilita canonical, og:url absolutos e sitemap).
+// Endereço oficial: habilita canonical, og:url e og:image absolutos.
+// Se trocar para um domínio próprio, mude aqui, em public/robots.txt e em public/sitemap.xml.
 export default defineConfig({
+  site: 'https://samuelandrei.vercel.app',
   output: 'static',
   compressHTML: true,
 });

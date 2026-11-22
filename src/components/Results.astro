@@ -5,18 +5,10 @@ const HOME = SITES.filter((s) => s.home);
 ---
 <section id="projetos" class="work" aria-labelledby="work-title">
   <div class="work__sticky">
-    <!-- Camada de trás: aparece quando o último painel sai para a esquerda (como uma cortina) -->
-    <div class="work__under">
-      <p class="work__eyebrow">Fale comigo</p>
-      <h2 class="work__big" data-blur="manual">Quer um site<br />assim para o<br />seu negócio?</h2>
-      <p class="work__sig"><span aria-hidden="true">✦</span> Site com intenção. Feito para funcionar.</p>
-      <a class="wbtn work__cta" href={wa(MSG.final)} target="_blank" rel="noopener noreferrer"><span>Falar no WhatsApp</span><i aria-hidden="true">→</i></a>
-    </div>
-
     <div class="work__track">
       <div class="wpanel wpanel--intro">
         <div class="wintro">
-          <h2 id="work-title" data-blur>Sites no ar<br />&amp; seus resultados</h2>
+          <h2 id="work-title" data-blur>Sites no ar <br />&amp; seus resultados</h2>
           <a class="wbtn" href="#google-meu-negocio"><span>Ver resultados no Google</span><i aria-hidden="true">→</i></a>
         </div>
       </div>
@@ -61,6 +53,14 @@ const HOME = SITES.filter((s) => s.home);
         </div>
         <span class="wend" aria-hidden="true"><span class="wend__line"></span><svg class="wend__plus" width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#F4F5F7"/><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#F4F5F7"/></svg></span>
       </div>
+    </div>
+
+    <!-- Camada de trás: aparece quando o último painel sai para a esquerda (como uma cortina) -->
+    <div class="work__under">
+      <p class="work__eyebrow">Fale comigo</p>
+      <h2 class="work__big" data-blur="manual">Quer um site <br />assim para o <br />seu negócio?</h2>
+      <p class="work__sig"><span aria-hidden="true">✦</span> Site com intenção. Feito para funcionar.</p>
+      <a class="wbtn work__cta" href={wa(MSG.final)} target="_blank" rel="noopener noreferrer"><span>Falar no WhatsApp</span><i aria-hidden="true">→</i></a>
     </div>
   </div>
 </section>

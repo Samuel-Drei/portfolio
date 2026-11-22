@@ -218,7 +218,7 @@ html.js .hero__line:nth-of-type(2) > span { animation-delay: .1s; }
 .wcard__media { display: block; width: min(100%, calc((100dvh - 14rem) * 1.4565)); aspect-ratio: 670 / 460; border-radius: 8px; overflow: hidden; background: #1b1c1f; }
 .wcard__media video { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; }
 .wcard__body { margin-top: 1.4rem; display: grid; gap: .8rem; }
-.wcard h3, .pcard h3 { font-family: var(--wsans); font-weight: 500; letter-spacing: -.04em; font-size: clamp(1.25rem, 1.45vw, 1.5rem); line-height: 1.1; color: #f4f5f7; }
+.wcard h3, .pcard h2 { font-family: var(--wsans); font-weight: 500; letter-spacing: -.04em; font-size: clamp(1.25rem, 1.45vw, 1.5rem); line-height: 1.1; color: #f4f5f7; }
 .wcard__row { display: flex; justify-content: space-between; align-items: flex-end; gap: 1rem; }
 .wcard__txt p { font-size: clamp(.78rem, .85vw, .9rem); line-height: 1.3; letter-spacing: -.01em; color: #9a9ea7; max-width: 19rem; }
 .wcard__txt .wcard__res { margin-top: .4rem; color: #f4f5f7; }
@@ -253,8 +253,6 @@ html.js .hero__line:nth-of-type(2) > span { animation-delay: .1s; }
   .wcard__row { flex-direction: column; align-items: flex-start; }
   .wcard__links { justify-items: start; grid-auto-flow: column; gap: 1.4rem; }
   .wpanel--end { padding-block: 3rem 4.5rem; }
-  .work__sticky { display: flex; flex-direction: column; }
-  .work__under { order: 2; }
 }
 
 /* Letras do título entrando com desfoque (modelo Trionn) */
