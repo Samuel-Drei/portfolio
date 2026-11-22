@@ -1,19 +1,17 @@
 ---
 import { wa, MSG, EMAIL, PHONE_LABEL, PHONE_TEL, LINKEDIN, GITHUB, INSTAGRAM } from '../data/site';
-import WaIcon from './WaIcon.astro';
 ---
 <section id="contato" class="final">
+  <div class="final__glow" aria-hidden="true"><i></i><i></i></div>
   <div class="final__inner">
-    <p class="eyebrow" data-reveal>Contato</p>
-    <h2 data-reveal>Quer um site <em>assim?</em></h2>
-    <p data-reveal>
-      Sou o Samuel. Trabalho na iBrand Marketing e crio sites e fichas no Google
-      para empresas da região. Conte em uma mensagem o que seu negócio faz.
-    </p>
+    <h2 data-reveal>
+      <span class="final__l1">Quer um site</span>
+      <span class="final__l2">assim para o seu negócio?</span>
+    </h2>
     <div data-reveal>
-      <a class="btn btn--gold btn--lg" href={wa(MSG.final)} target="_blank" rel="noopener noreferrer"><WaIcon />Falar no WhatsApp</a>
+      <a class="gbtn" href={wa(MSG.final)} target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
     </div>
-    <p class="hero__micro" data-reveal>Ou por e-mail: <a href={`mailto:${EMAIL}`}>{EMAIL}</a></p>
+    <p class="final__mail" data-reveal>Ou por e-mail: <a href={`mailto:${EMAIL}`}>{EMAIL}</a></p>
 
     <footer class="footer" style="width:100%">
       <div class="footer__cols">

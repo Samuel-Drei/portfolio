@@ -1,43 +1,56 @@
 ---
 import { SITES } from '../data/sites';
+import { wa, MSG } from '../data/site';
 ---
-<section id="projetos" class="sec">
-  <header class="sec__head">
-    <p class="eyebrow eyebrow--gold" data-reveal>Projetos</p>
-    <h2 data-reveal>Sites no ar e os resultados deles no Google</h2>
-  </header>
+<section id="projetos" class="work" aria-labelledby="work-title">
+  <div class="work__sticky">
+    <div class="work__track">
+      <div class="wpanel wpanel--intro">
+        <div class="wintro">
+          <h2 id="work-title">Sites no ar<br />&amp; seus resultados</h2>
+          <a class="wbtn" href="#google-meu-negocio"><span>Ver resultados no Google</span><i aria-hidden="true">→</i></a>
+        </div>
+      </div>
 
-  <ul class="projects">
-    {SITES.map((s, i) => (
-      <li class="project" data-reveal>
-        <div class="project__media">
-          <video
-            muted loop playsinline preload="none"
-            data-poster={`/videos/${s.video}.jpg`}
-            data-src={`/videos/${s.video}.mp4`}
-            aria-label={`Rolagem do site ${s.name}`}
-          ></video>
+      {SITES.map((s) => (
+        <article class="wpanel wcard">
+          <span class="wline" aria-hidden="true"></span>
+          <div class="wcard__inner">
+            <a class="wcard__media" href={s.url} target="_blank" rel="noopener noreferrer" aria-label={`Abrir o site ${s.name}`}>
+              <video
+                muted loop playsinline preload="none"
+                poster={`/videos/${s.video}.jpg`}
+                data-src={`/videos/${s.video}.mp4`}
+                aria-hidden="true"
+              ></video>
+            </a>
+            <div class="wcard__body">
+              <h3>{s.name}</h3>
+              <div class="wcard__row">
+                <div class="wcard__txt">
+                  <p>{s.note}</p>
+                  {s.result && (
+                    <p class="wcard__res"><b>{s.result.n}</b> {s.result.text} <small>· {s.result.period}</small></p>
+                  )}
+                </div>
+                <div class="wcard__links">
+                  <a class="wbtn" href={s.url} target="_blank" rel="noopener noreferrer" aria-label={`Visitar o site ${s.name}`}><span>Visitar site</span><i aria-hidden="true">→</i></a>
+                  {s.demo && <a class="wbtn wbtn--sm" href={s.demo} target="_blank" rel="noopener noreferrer"><span>Testar demo</span><i aria-hidden="true">→</i></a>}
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      ))}
+
+      <div class="wpanel wpanel--end">
+        <span class="wline" aria-hidden="true"></span>
+        <div class="wintro">
+          <h3>Quer um site assim para o seu negócio?</h3>
+          <a class="wbtn" href={wa(MSG.final)} target="_blank" rel="noopener noreferrer"><span>Falar no WhatsApp</span><i aria-hidden="true">→</i></a>
         </div>
-        <div class="project__head">
-          <span class="project__n">{String(i + 1).padStart(2, '0')}</span>
-          <h3>
-            {s.url
-              ? <a class="project__link" href={s.url} target="_blank" rel="noopener noreferrer">{s.name} <span aria-hidden="true">↗</span></a>
-              : s.name}
-          </h3>
-        </div>
-        <p class="project__note">{s.note}</p>
-        {s.result && (
-          <p class="project__result">
-            <b>{s.result.n}</b>
-            <span>{s.result.text} <small>· {s.result.period}</small></span>
-          </p>
-        )}
-        <div class="project__foot">
-          <div class="tags">{s.tags.map((t) => <span>{t}</span>)}</div>
-          {s.demo && <a class="project__demo" href={s.demo} target="_blank" rel="noopener noreferrer">Testar demo ↗</a>}
-        </div>
-      </li>
-    ))}
-  </ul>
+        <span class="wend" aria-hidden="true"><span class="wend__line"></span><svg class="wend__plus" width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#2F323B"/><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#2F323B"/></svg></span>
+      </div>
+    </div>
+  </div>
 </section>
