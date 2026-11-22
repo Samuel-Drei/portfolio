@@ -38,6 +38,7 @@ const paint = () => {
   ticking = false;
   nav?.classList.toggle('is-stuck', scrollY > 30);
   if (nav) {
+    nav.classList.toggle('on-work', !!lightSecs[0] && (() => { const r = lightSecs[0].getBoundingClientRect(); return r.top <= 40 && r.bottom > 40; })());
     nav.classList.toggle('on-light', lightSecs.some((s) => { const r = s.getBoundingClientRect(); return r.top <= 40 && r.bottom > 40; }));
   }
 };
@@ -130,4 +131,10 @@ const heroVideo = $<HTMLVideoElement>('#heroVideo');
 if (heroVideo && (reduce || saver)) {
   heroVideo.removeAttribute('autoplay');
   heroVideo.pause();
+}
+
+// Vídeo da chamada final: toca só quando aparece
+const ctaVideo = $<HTMLVideoElement>('[data-cta]');
+if (ctaVideo && !reduce && !saver) {
+  new IntersectionObserver(([e]) => { if (e.isIntersecting) ctaVideo.play().catch(() => {}); else ctaVideo.pause(); }, { threshold: 0.1 }).observe(ctaVideo);
 }

@@ -12,9 +12,10 @@ import { wa, MSG } from '../data/site';
         </div>
       </div>
 
-      {SITES.map((s) => (
+      {SITES.map((s, i) => (
         <article class="wpanel wcard">
           <span class="wline" aria-hidden="true"></span>
+          {i === 0 && <svg class="wplus" width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#2F323B"/><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#2F323B"/></svg>}
           <div class="wcard__inner">
             <a class="wcard__media" href={s.url} target="_blank" rel="noopener noreferrer" aria-label={`Abrir o site ${s.name}`}>
               <video
@@ -51,6 +52,7 @@ import { wa, MSG } from '../data/site';
         </div>
         <span class="wend" aria-hidden="true"><span class="wend__line"></span><svg class="wend__plus" width="13" height="13" viewBox="0 0 13 13" fill="none"><line x1="6.5" y1="0" x2="6.5" y2="13" stroke="#2F323B"/><line x1="0" y1="6.5" x2="13" y2="6.5" stroke="#2F323B"/></svg></span>
       </div>
+      <div class="wpanel wpanel--tail" aria-hidden="true"></div>
     </div>
   </div>
 </section>
