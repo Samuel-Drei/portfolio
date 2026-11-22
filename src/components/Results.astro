@@ -1,18 +1,16 @@
 ---
 import { SITES } from '../data/sites';
-import { wa, MSG } from '../data/site';
 ---
-<section id="sites" class="sec sec--alt">
+<section id="projetos" class="sec">
   <header class="sec__head">
-    <span class="mono" data-reveal>(02) · Sites no ar</span>
-    <h2 data-reveal>Sites que eu <em>criei</em>, funcionando agora</h2>
-    <p class="sec__intro" data-reveal>Toque em um cartão para abrir o site de verdade. O vídeo mostra a rolagem da página.</p>
+    <p class="eyebrow eyebrow--gold" data-reveal>Projetos</p>
+    <h2 data-reveal>Sites no ar e os resultados deles no Google</h2>
   </header>
 
-  <ul class="sites__grid">
-    {SITES.map((s) => (
-      <li class="site-card">
-        <div class="site-card__media">
+  <ul class="projects">
+    {SITES.map((s, i) => (
+      <li class="project" data-reveal>
+        <div class="project__media">
           <video
             muted loop playsinline preload="none"
             data-poster={`/videos/${s.video}.jpg`}
@@ -20,26 +18,26 @@ import { wa, MSG } from '../data/site';
             aria-label={`Rolagem do site ${s.name}`}
           ></video>
         </div>
-        <div class="site-card__info">
-          <strong>
+        <div class="project__head">
+          <span class="project__n">{String(i + 1).padStart(2, '0')}</span>
+          <h3>
             {s.url
-              ? <a class="site-card__main" href={s.url} target="_blank" rel="noopener noreferrer">{s.name}</a>
+              ? <a class="project__link" href={s.url} target="_blank" rel="noopener noreferrer">{s.name} <span aria-hidden="true">↗</span></a>
               : s.name}
-          </strong>
-          <span>{s.note}</span>
-          {(s.url || s.demo) && (
-            <div class="site-card__links">
-              {s.url && <span class="mono">Ver site ↗</span>}
-              {s.demo && <a class="mono" href={s.demo} target="_blank" rel="noopener noreferrer">Testar demo ↗</a>}
-            </div>
-          )}
+          </h3>
+        </div>
+        <p class="project__note">{s.note}</p>
+        {s.result && (
+          <p class="project__result">
+            <b>{s.result.n}</b>
+            <span>{s.result.text} <small>· {s.result.period}</small></span>
+          </p>
+        )}
+        <div class="project__foot">
+          <div class="tags">{s.tags.map((t) => <span>{t}</span>)}</div>
+          {s.demo && <a class="project__demo" href={s.demo} target="_blank" rel="noopener noreferrer">Testar demo ↗</a>}
         </div>
       </li>
     ))}
   </ul>
 </section>
-
-<aside class="strip">
-  <p>Quer um site assim para o seu negócio?</p>
-  <a class="btn" href={wa(MSG.sites)} target="_blank" rel="noopener noreferrer">Pedir orçamento&nbsp;↗</a>
-</aside>

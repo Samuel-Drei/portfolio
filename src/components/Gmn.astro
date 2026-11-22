@@ -1,16 +1,15 @@
 ---
 import { GMN } from '../data/gmn';
-import { wa, MSG } from '../data/site';
 
 // Os três perfis com mais volume viram cartões grandes; os demais entram em lista compacta.
 const TOP = ['Hotel Tezla', 'Chaveiro Estrela', 'Tron Locações'];
 const top = GMN.filter((g) => TOP.includes(g.name));
 const rest = GMN.filter((g) => !TOP.includes(g.name));
 ---
-<section id="google-meu-negocio" class="sec">
+<section id="google-meu-negocio" class="sec sec--light">
   <header class="sec__head">
-    <span class="mono" data-reveal>(01) · Resultados no Google</span>
-    <h2 data-reveal>Empresas da sua cidade que <em>aparecem</em> no Google e no mapa</h2>
+    <p class="eyebrow eyebrow--gold" data-reveal>Resultados no Google</p>
+    <h2 data-reveal>Empresas da sua cidade que aparecem no Google e no mapa</h2>
     <p class="sec__intro" data-reveal>
       Cada cartão é o painel real do Google de um cliente: quantas pessoas viram a ficha da empresa
       e o que digitaram para chegar nela.
@@ -21,13 +20,13 @@ const rest = GMN.filter((g) => !TOP.includes(g.name));
     {top.map((g) => (
       <li class:list={['gmn-card', { 'gmn-card--feature': g.feature }]} data-reveal>
         <h3>{g.name}</h3>
-        <p class="mono">{g.segment}</p>
-        <span class="gmn-card__period mono">{g.period}</span>
-        <div class:list={['gmn-card__nums', { 'gmn-card__nums--3': g.stats.length === 3 }]}>
+        <p class="gmn-card__seg">{g.segment}</p>
+        <span class="gmn-card__period">{g.period}</span>
+        <div class="gmn-card__nums">
           {g.stats.map((s) => (
             <div>
               <span class="gmn-card__n">{s.n}</span>
-              <span class="mono">{s.label}</span>
+              <span class="gmn-card__lbl">{s.label}</span>
               {s.up && <span class="gmn-card__up">{s.up} {s.vs && <small>{s.vs}</small>}</span>}
             </div>
           ))}
@@ -37,19 +36,19 @@ const rest = GMN.filter((g) => !TOP.includes(g.name));
     ))}
   </ul>
 
-  <h3 class="mono gmn-more" data-reveal>Outros perfis</h3>
+  <h3 class="gmn-more" data-reveal>Outros perfis</h3>
   <ul class="gmn-mini" data-reveal>
     {rest.map((g) => (
       <li>
         <strong>{g.name}</strong>
         <span>{g.segment}</span>
-        <span class="mono">{g.stats[0].n} {g.stats[0].label} · {g.period}</span>
+        <span>{g.stats[0].n} {g.stats[0].label} · {g.period}</span>
       </li>
     ))}
   </ul>
 
   <div class="trust" data-reveal>
-    <h3 class="mono">Como ler estes números</h3>
+    <h3>Como ler estes números</h3>
     <ul>
       <li>Os dados vêm do painel “Desempenho” do Perfil da Empresa no Google de cada cliente, publicados com autorização deles.</li>
       <li>O período aparece em cada cartão. Eles diferem porque os perfis foram medidos em momentos diferentes.</li>
@@ -58,8 +57,3 @@ const rest = GMN.filter((g) => !TOP.includes(g.name));
     </ul>
   </div>
 </section>
-
-<aside class="strip">
-  <p>Quer ver o seu negócio assim no Google?</p>
-  <a class="btn" href={wa(MSG.gmn)} target="_blank" rel="noopener noreferrer">Falar no WhatsApp&nbsp;↗</a>
-</aside>

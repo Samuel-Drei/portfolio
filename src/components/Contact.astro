@@ -1,46 +1,44 @@
 ---
 import { wa, MSG, EMAIL, PHONE_LABEL, PHONE_TEL, LINKEDIN, GITHUB, INSTAGRAM } from '../data/site';
+import WaIcon from './WaIcon.astro';
 ---
-<section id="contato" class="contact">
-  <span class="mono contact__label" data-reveal>(07) · Orçamento</span>
-  <h2 class="contact__title" data-reveal>
-    <span class="hero__line"><span>Vamos</span></span>
-    <span class="hero__line"><span class="outline">conversar?</span></span>
-  </h2>
-  <p class="contact__lead" data-reveal>Conte em uma mensagem o que seu negócio faz e onde atua. Eu respondo com uma proposta clara, por escrito.</p>
+<section id="contato" class="final">
+  <div class="final__inner">
+    <p class="eyebrow" data-reveal>Contato</p>
+    <h2 data-reveal>Quer um site <em>assim?</em></h2>
+    <p data-reveal>
+      Sou o Samuel, de Primavera do Leste (MT). Trabalho na iBrand Marketing e crio sites e fichas no Google
+      para empresas da região. Conte em uma mensagem o que seu negócio faz.
+    </p>
+    <div data-reveal>
+      <a class="btn btn--gold btn--lg" href={wa(MSG.final)} target="_blank" rel="noopener noreferrer"><WaIcon />Falar no WhatsApp</a>
+    </div>
+    <p class="hero__micro" data-reveal>Ou por e-mail: <a href={`mailto:${EMAIL}`}>{EMAIL}</a></p>
 
-  <div class="contact__actions" data-reveal>
-    <a class="btn btn--wa btn--lg" href={wa(MSG.final)} target="_blank" rel="noopener noreferrer">Receber minha proposta no WhatsApp&nbsp;↗</a>
+    <footer class="footer" style="width:100%">
+      <div class="footer__cols">
+        <div>
+          <h3>Contato</h3>
+          <a href={`tel:${PHONE_TEL}`}>{PHONE_LABEL}</a>
+          <a href={`mailto:${EMAIL}`}>E-mail</a>
+        </div>
+        <div>
+          <h3>Redes</h3>
+          {INSTAGRAM && <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer">Instagram ↗</a>}
+          <a href={LINKEDIN} target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a href={GITHUB} target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        </div>
+        <div>
+          <h3>Mais</h3>
+          <a href="/assets/curriculo-samuel-andrei.pdf" download>Currículo (PDF)</a>
+          <a href="#projetos">Projetos</a>
+          <a href="#google-meu-negocio">Resultados no Google</a>
+        </div>
+      </div>
+      <div class="footer__base">
+        <span>© 2026 Samuel Andrei Tramontin Teixeira · Primavera do Leste, MT</span>
+        <a href="#inicio">Voltar ao topo ↑</a>
+      </div>
+    </footer>
   </div>
-  <p class="hero__micro mono" data-reveal>Sem compromisso. Abre o WhatsApp com a mensagem já escrita. Prefere e-mail? <a href={`mailto:${EMAIL}`}>{EMAIL}</a></p>
-
-  <footer class="footer">
-    <div class="footer__cols">
-      <div>
-        <h3 class="mono">Contato</h3>
-        <a href={`tel:${PHONE_TEL}`}>{PHONE_LABEL}</a>
-        <a href={`mailto:${EMAIL}`}>E-mail</a>
-      </div>
-      <div>
-        <h3 class="mono">Redes</h3>
-        {INSTAGRAM && <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer">Instagram&nbsp;↗</a>}
-        <a href={LINKEDIN} target="_blank" rel="noopener noreferrer">LinkedIn&nbsp;↗</a>
-        <a href={GITHUB} target="_blank" rel="noopener noreferrer">GitHub&nbsp;↗</a>
-      </div>
-      <div>
-        <h3 class="mono">Índice</h3>
-        <a href="#google-meu-negocio">Resultados no Google</a>
-        <a href="#sites">Sites no ar</a>
-        <a href="#servicos">Serviços</a>
-      </div>
-    </div>
-    <div class="footer__base mono">
-      <span>© 2026 Samuel Andrei Tramontin Teixeira · Primavera do Leste, MT</span>
-      <a href="#inicio">Voltar ao topo&nbsp;↑</a>
-    </div>
-  </footer>
 </section>
-
-<div class="cta-bar" id="ctaBar">
-  <a class="btn btn--wa" href={wa(MSG.bar)} target="_blank" rel="noopener noreferrer">Pedir orçamento no WhatsApp</a>
-</div>
