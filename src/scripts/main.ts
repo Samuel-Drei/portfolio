@@ -72,7 +72,7 @@ videos.forEach((v) => { pio.observe(v); vio.observe(v); });
 // Cabeçalho (fundo ao rolar, uma leitura por quadro)
 const nav = $('#nav');
 let ticking = false;
-const lightSecs = $$('#projetos, #google-meu-negocio, [data-light-sec]');
+const lightSecs = $$('#google-meu-negocio, [data-light-sec]');
 const workSec = $('#projetos');
 const paint = () => {
   ticking = false;
