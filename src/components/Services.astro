@@ -1,0 +1,19 @@
+---
+import { SERVICES } from '../data/content';
+---
+<section id="servicos" class="sec">
+  <header class="sec__head">
+    <span class="mono" data-reveal>(01) · Serviços</span>
+    <h2 data-reveal>O que eu <em>faço</em> pelo seu negócio</h2>
+  </header>
+  <ul class="services">
+    {SERVICES.map((s) => (
+      <li class="service" data-reveal>
+        <span class="service__idx mono">{s.idx}</span>
+        <h3>{s.title}</h3>
+        <p>{s.text}</p>
+        <span class="service__tags mono">{s.tags}</span>
+      </li>
+    ))}
+  </ul>
+</section>

@@ -1,0 +1,29 @@
+---
+import { NAV, MENU } from '../data/site';
+---
+<a class="skip-link" href="#main">Pular para o conteúdo</a>
+<canvas class="field" id="field" aria-hidden="true"></canvas>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="noise" aria-hidden="true"></div>
+
+<div class="preloader" id="preloader" aria-hidden="true">
+  <span class="preloader__name">Samuel Andrei</span>
+  <span class="preloader__count mono" id="preloaderCount">00</span>
+</div>
+
+<header class="head" id="head">
+  <a class="head__brand" href="#inicio">Samuel&nbsp;Andrei<sup>©</sup></a>
+  <nav class="head__nav" aria-label="Principal">
+    {NAV.map((l) => <a href={l.href}>{l.label}</a>)}
+    <a class="head__cta" href="#contato">Orçamento</a>
+  </nav>
+  <button class="menu-btn mono" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <nav aria-label="Menu">
+    {MENU.map((l, i) => (
+      <a href={l.href}><span class="mono">{String(i + 1).padStart(2, '0')}</span>{l.label}</a>
+    ))}
+  </nav>
+</div>

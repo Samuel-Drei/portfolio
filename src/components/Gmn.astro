@@ -1,0 +1,33 @@
+---
+import { GMN } from '../data/gmn';
+---
+<section id="maps" class="sec">
+  <header class="sec__head">
+    <span class="mono" data-reveal>(03) · Google Meu Negócio</span>
+    <h2 data-reveal>Perfis que <em>aparecem</em> no Google e no Maps</h2>
+  </header>
+
+  <ul class="gmn">
+    {GMN.map((g) => (
+      <li class:list={['gmn-card', { 'gmn-card--feature': g.feature }]} data-reveal>
+        <h3>{g.name}</h3>
+        <p class="mono">{g.segment}</p>
+        <span class="gmn-card__period mono">{g.period}</span>
+        <div class:list={['gmn-card__nums', { 'gmn-card__nums--3': g.stats.length === 3 }]}>
+          {g.stats.map((s) => (
+            <div>
+              <span class="gmn-card__n">{s.n}</span>
+              <span class="mono">{s.label}</span>
+              {s.up && <span class="gmn-card__up">{s.up} {s.vs && <small>{s.vs}</small>}</span>}
+            </div>
+          ))}
+        </div>
+        <p class="gmn-card__q" set:html={g.q} />
+      </li>
+    ))}
+  </ul>
+  <p class="gmn__note mono" data-reveal>
+    Dados do painel “Desempenho” do Perfil da Empresa no Google, publicados com autorização dos clientes.
+    O período está indicado em cada cartão. Variações comparadas ao período mostrado no próprio painel.
+  </p>
+</section>

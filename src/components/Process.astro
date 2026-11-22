@@ -1,0 +1,18 @@
+---
+import { STEPS } from '../data/content';
+---
+<section id="processo" class="sec sec--alt">
+  <header class="sec__head">
+    <span class="mono" data-reveal>(04) · Processo</span>
+    <h2 data-reveal>Do <em>briefing</em> ao site no ar</h2>
+  </header>
+  <ol class="steps">
+    {STEPS.map((s, i) => (
+      <li data-reveal>
+        <span class="mono">{String(i + 1).padStart(2, '0')}</span>
+        <h3>{s.title}</h3>
+        <p>{s.text}</p>
+      </li>
+    ))}
+  </ol>
+</section>

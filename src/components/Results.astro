@@ -1,0 +1,62 @@
+---
+import { STATS, WORK } from '../data/content';
+import { SITES } from '../data/sites';
+---
+<section id="resultados" class="sec sec--alt">
+  <header class="sec__head">
+    <span class="mono" data-reveal>(02) · Resultados</span>
+    <h2 data-reveal>Entrega <em>real</em>, em produção</h2>
+  </header>
+
+  <ul class="stats" data-reveal>
+    {STATS.map((s) => (
+      <li>
+        <span class="stat__num">{s.num}{s.sup && <sup>{s.sup}</sup>}</span>
+        <span class="mono">{s.label}</span>
+      </li>
+    ))}
+  </ul>
+
+  <ul class="work-list">
+    {WORK.map((w, i) => (
+      <li>
+        <div class="work-row">
+          <span class="work-row__idx mono">{String(i + 1).padStart(2, '0')}</span>
+          <span class="work-row__title">{w.title}</span>
+          <span class="work-row__cat">{w.cat}</span>
+          <span class="work-row__meta mono">{w.meta}</span>
+        </div>
+      </li>
+    ))}
+  </ul>
+
+  {SITES.length > 0 && (
+    <div class="sites">
+      <h3 class="mono">Sites no ar</h3>
+      <ul class="sites__grid">
+        {SITES.map((s) => (
+          <li class="site-card">
+            <div class="site-card__media">
+              <video
+                muted loop playsinline preload="none"
+                poster={`/videos/${s.video}.jpg`}
+                data-src={`/videos/${s.video}.mp4`}
+                aria-label={`Rolagem do site ${s.name}`}
+              ></video>
+            </div>
+            <div class="site-card__info">
+              <strong>{s.name}</strong>
+              <span>{s.note}</span>
+              {(s.url || s.demo) && (
+                <div class="site-card__links">
+                  {s.url && <a class="mono" href={s.url} target="_blank" rel="noopener noreferrer">Ver site ↗</a>}
+                  {s.demo && <a class="mono" href={s.demo} target="_blank" rel="noopener noreferrer">Testar demo ↗</a>}
+                </div>
+              )}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )}
+</section>

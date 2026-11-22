@@ -1,13 +1,13 @@
-/* Samuel Andrei · Portfólio
+﻿/* Samuel Andrei · Portfólio
    Editorial escuro · Syne / Instrument Serif / Manrope / Space Mono */
 
-@font-face { font-family: 'Syne'; font-weight: 700; font-display: swap; src: url(fonts/syne-700-latin.woff2) format('woff2'); }
-@font-face { font-family: 'Syne'; font-weight: 800; font-display: swap; src: url(fonts/syne-800-latin.woff2) format('woff2'); }
-@font-face { font-family: 'Instrument Serif'; font-style: italic; font-weight: 400; font-display: swap; src: url(fonts/instrument-serif-400-italic-latin.woff2) format('woff2'); }
-@font-face { font-family: 'Manrope'; font-weight: 400; font-display: swap; src: url(fonts/manrope-400-latin.woff2) format('woff2'); }
-@font-face { font-family: 'Manrope'; font-weight: 500; font-display: swap; src: url(fonts/manrope-500-latin.woff2) format('woff2'); }
-@font-face { font-family: 'Manrope'; font-weight: 600; font-display: swap; src: url(fonts/manrope-600-latin.woff2) format('woff2'); }
-@font-face { font-family: 'Space Mono'; font-weight: 400; font-display: swap; src: url(fonts/space-mono-400-latin.woff2) format('woff2'); }
+@font-face { font-family: 'Syne'; font-weight: 700; font-display: swap; src: url(/fonts/syne-700-latin.woff2) format('woff2'); }
+@font-face { font-family: 'Syne'; font-weight: 800; font-display: swap; src: url(/fonts/syne-800-latin.woff2) format('woff2'); }
+@font-face { font-family: 'Instrument Serif'; font-style: italic; font-weight: 400; font-display: swap; src: url(/fonts/instrument-serif-400-italic-latin.woff2) format('woff2'); }
+@font-face { font-family: 'Manrope'; font-weight: 400; font-display: swap; src: url(/fonts/manrope-400-latin.woff2) format('woff2'); }
+@font-face { font-family: 'Manrope'; font-weight: 500; font-display: swap; src: url(/fonts/manrope-500-latin.woff2) format('woff2'); }
+@font-face { font-family: 'Manrope'; font-weight: 600; font-display: swap; src: url(/fonts/manrope-600-latin.woff2) format('woff2'); }
+@font-face { font-family: 'Space Mono'; font-weight: 400; font-display: swap; src: url(/fonts/space-mono-400-latin.woff2) format('woff2'); }
 
 :root {
   --bg: #0b0b0a;
@@ -246,3 +246,4 @@ html.js body.is-loaded .hero__line:nth-of-type(3) > span { transition-delay: .5s
   .marquee__track { animation: none; }
   html.js [data-reveal], html.js .hero__line > span { transition: none; opacity: 1; transform: none; }
 }
+
