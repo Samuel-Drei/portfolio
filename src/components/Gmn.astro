@@ -25,6 +25,7 @@ const rest = GMN.filter((g) => !TOP.includes(g.name));
           <div class="gcard__id">
             <h3>{g.name}</h3>
             <p>{g.segment}</p>
+            {g.rating && <p class="grate"><span aria-hidden="true">★</span> <b>{g.rating.n}</b> · {g.rating.count} avaliações</p>}
           </div>
           <span class="gcard__period">{g.period}</span>
         </div>
@@ -87,6 +88,7 @@ const rest = GMN.filter((g) => !TOP.includes(g.name));
         <span class="gmini__lbl">{g.stats[0].label}</span>
         <h4>{g.name}</h4>
         <p>{g.segment}</p>
+        {g.rating && <p class="grate"><span aria-hidden="true">★</span> <b>{g.rating.n}</b> · {g.rating.count} avaliações</p>}
       </li>
     ))}
   </ul>

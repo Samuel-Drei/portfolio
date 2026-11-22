@@ -149,6 +149,9 @@ html.js .hero__line:nth-of-type(2) > span { animation-delay: .1s; }
 .gcard__top { display: flex; align-items: center; gap: .9rem; }
 .gcard__id { min-width: 0; flex: 1; }
 .gcard h3 { font-family: 'Inter Tight', var(--font-body); font-weight: 600; font-size: clamp(1.25rem, 1.8vw, 1.55rem); letter-spacing: -.03em; line-height: 1.1; }
+.grate { display: flex; align-items: center; gap: .35rem; margin-top: .25rem; font-size: .92rem; color: var(--gmute); }
+.grate span { color: #fbbc04; font-size: 1.05rem; }
+.grate b { color: var(--gink); font-weight: 600; }
 .gcard__id p { color: var(--gmute); font-size: .95rem; margin-top: .15rem; }
 .gcard__period { flex: none; padding: .3rem .8rem; background: #e8f0fe; color: var(--gblue); border-radius: 999px; font-size: .82rem; font-weight: 500; }
 .gcard__main { display: grid; gap: 1.2rem; }

@@ -8,6 +8,7 @@ export interface GmnItem {
   stats: GmnStat[];
   searches?: { t: string; n: string }[]; // o que as pessoas digitaram (n = quantas vezes)
   notes?: string[];
+  rating?: { n: string; count: number }; // nota média e nº de avaliações no Google (só quando conhecida)
   recent?: { title: string; items: { n: string; what: string; up: string }[]; vs: string };
 }
 
@@ -39,7 +40,8 @@ export const GMN: GmnItem[] = [
       { t: 'chaveiro primavera do leste', n: '785' },
       { t: 'chaveiro', n: '393' },
     ],
-    notes: ['69% pelo celular', 'Nota 4,6★ em 66 avaliações'],
+    notes: ['69% pelo celular'],
+    rating: { n: '4,6', count: 66 },
     recent: { title: 'Último mês', items: [{ n: '692', what: 'visualizações', up: '+17,3%' }, { n: '388', what: 'buscas', up: '+1,8%' }], vs: 'vs. set/2025' },
   },
   {

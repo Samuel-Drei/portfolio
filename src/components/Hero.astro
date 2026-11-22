@@ -1,6 +1,10 @@
 ---
 import { wa, MSG } from '../data/site';
 import WaIcon from './WaIcon.astro';
+import { GMN } from '../data/gmn';
+
+// Soma das visualizações de cada perfil (cada um no seu período, como aparece nos cartões)
+const totalViews = GMN.reduce((t, g) => t + Number(g.stats[0].n.replace(/\./g, '')), 0).toLocaleString('pt-BR');
 ---
 <section id="inicio" class="hero">
   <div class="hero__bg" aria-hidden="true">
@@ -26,8 +30,8 @@ import WaIcon from './WaIcon.astro';
   </div>
 
   <ul class="proof">
-    <li><b>15+</b><span>sites no ar</span></li>
-    <li><b>12.201</b><span>visualizações do perfil de um hotel no Google (jun–nov/2026)</span></li>
-    <li><b>4,6★</b><span>nota de um chaveiro com 66 avaliações no Google</span></li>
+    <li><b>25+</b><span>sites em produção</span></li>
+    <li><b>{totalViews}</b><span>visualizações somadas dos perfis de {GMN.length} clientes no Google (cada um no seu período)</span></li>
+    <li><b>4,6★</b><span>nota do Chaveiro Estrela no Google, em 66 avaliações</span></li>
   </ul>
 </section>
